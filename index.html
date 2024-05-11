@@ -2,23 +2,35 @@
 <html lang="eng"><head>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<style type="text/css">h1, h2 {
-  font-family: Lato;
+<style type="text/css">
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .scroll-container {
   width: 100%;
   height: 500px;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .scroll-element {
-  width: 100%;
-  background: red;
+  background: #0af;
   color: white;
   padding: 20px 10px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
+  border-radius: 8px;
 }</style></head>
+<script>
+  const fixScrolling = () => {
+    window.scrollTo(0,0.0003);
+
+    setTimeout(() => {
+      window.scrollTo(0,0);
+      fixScrolling();
+    }, 400);
+  }
+</script>
 <body><div id="app">
   <div class="scroll-container">
     
