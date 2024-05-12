@@ -36,11 +36,10 @@
         const container = document.getElementById('tg-webapp-scroll-fix')
         const block = document.getElementById('tg-webapp-scroll-fix-block');
   
-        container.style.maxHeight = '100px';
+        container.style.maxWidth = '100vw';
         container.style.overflow = 'auto';
-        container.style.scrollBehavior = 'smooth';
-        block.style.height = '200px';
-  
+        block.style.width = '200vw';
+      
         
         const fixScrolling = () => {
             container.scrollTo(0,100);
