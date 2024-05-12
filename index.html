@@ -43,9 +43,11 @@
         
         const fixScrolling = () => {
             container.scrollTo(0,100);
+            container.focus();
             
             setTimeout(() => {
               container.scrollTo(0,0);
+              container.blur();
               setTimeout(fixScrolling, 200);
             }, 200);
         }
