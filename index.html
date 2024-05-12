@@ -33,9 +33,9 @@ html, body {
       const wait = () => Promise((res) => setTimeout(res, 200));
       
       while (true) {
-        appContainer.scrollTo(0, 100);
+        appContainer.scrollTop += 1;
         await wait();
-        appContainer.scrollTo(0, 0);
+        appContainer.scrollTop -= 1;;
       }
     }
   
