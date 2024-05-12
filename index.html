@@ -21,19 +21,41 @@
   margin-bottom: 8px;
   border-radius: 8px;
 }</style></head>
-<script>
-  const fixScrolling = () => {
-    window.scrollTo(0,1);
-
-    setTimeout(() => {
-      window.scrollTo(0,0);
-      fixScrolling();
-    }, 400);
-  }
-
-  fixScrolling();
-</script>
-<body><div id="app">
+<body>
+  <script>
+    const main = () => {
+        const appContainer = document.body;
+    
+        appContainer.insertAdjacentHTML('afterend', `
+            <div id="tg-webapp-scroll-fix">
+                <div id="tg-webapp-scroll-fix-block">
+                </div>
+            </div>
+        `);
+  
+        const container = document.getElementById('tg-webapp-scroll-fix')
+        const block = document.getElementById('tg-webapp-scroll-fix-block');
+  
+        container.style.maxHeight = '100px';
+        container.style.overflow = 'auto';
+        block.style.height = '200px';
+  
+        
+        const fixScrolling = () => {
+            container.scrollTo(0,100);
+            
+            setTimeout(() => {
+              container.scrollTo(0,0);
+              setTimeout(fixScrolling, 400);
+            }, 400);
+        }
+        
+        fixScrolling();
+    }
+  
+    main()
+  </script>
+  <div id="app">
   <div class="scroll-container">
     
         <div class="scroll-element">
