@@ -55,9 +55,14 @@
     }
   
     main()
+
+    const containerScroll = document.getElementById('container');
+    containerScroll.ontouchstart = () => {
+      containerScroll.focus();
+    }
   </script>
   <div id="app">
-  <div class="scroll-container">
+  <div class="scroll-container" id="container">
     
         <div class="scroll-element">
           1 Element
